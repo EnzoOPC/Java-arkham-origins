@@ -17,8 +17,9 @@ public class App {
             party.add(i, pokemon);
         }
         System.out.println("Your finished party is: " + party);
-        System.err.println();
-        System.err.println();
+        System.out.println();
+        System.out.println();
+        scan.close();
 
 
     }
