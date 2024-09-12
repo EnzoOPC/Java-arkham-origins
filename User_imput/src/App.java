@@ -7,6 +7,8 @@ public class App {
         
         Scanner scan = new Scanner(System.in);      // System.in is to make so we can type the imput in the terminal (i think)
 
+        // There is a underlined text with a msg saying "Resource leak"... I'm sure that's fine
+
         List<String> party = new ArrayList<>();     // Why do I have to write an essay just to create a fucking list ;-;
 
         for (int i = 1; i < 7; i++) {               // for loop cool tho ¬¬
