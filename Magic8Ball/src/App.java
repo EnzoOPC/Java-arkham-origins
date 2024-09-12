@@ -97,5 +97,6 @@ public class App {
             System.err.println("Something went wrong");
                 break;
         }
+        scan.close();
     }
 }
