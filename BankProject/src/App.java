@@ -32,7 +32,7 @@ public class App {
 
             switch (action) {
                 case "Deposit":
-                        System.out.println("You typed Deposit");
+                        System.out.println("You selected Deposit");
                     break;
 
                 case "Withdraw":
@@ -40,9 +40,9 @@ public class App {
                         double Withdraw = scan.nextDouble();
                         if (Withdraw > money) {
                             System.err.println("You curently don't have enough deposited to withdraw tha ammount.");
-                            System.err.printf("You curently have %.2f in your account.", money);
+                            System.err.printf("\nYou curently have %.2f in your account.", money);
                         } else if (Withdraw <= money) {
-                            System.out.println();
+                            System.out.printf("\nYou withdrew %.2f from your accont and curently has %.2f in your account", Withdraw, money);
                         }
 
                     break;
