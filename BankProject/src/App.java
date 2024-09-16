@@ -26,7 +26,7 @@ public class App {
             double money = 1000;
 
             System.out.println("Possible actions:");
-            System.out.println("Deposit - Withdraw - Delete account - Change account information");
+            System.out.println("Deposit - Withdraw - Delete account - Change credentials");
 
             String action = scan.nextLine();
 
@@ -59,8 +59,53 @@ public class App {
                         System.out.println("Account deleted. Please create a new account if you want to continue to use our services.");
                     break;
 
-                case "Change account information":
-                        System.out.println("You typed Change");
+                case "Change credentials":
+                        System.out.println("You selected Change credentials, please confirm your current Name/E-mail and passowrd to continue.");
+                        String confirmNameEmail = scan.next();
+                        String confirmPass = scan.nextLine();
+
+                        if (confirmNameEmail != name && confirmNameEmail != email) {
+                            System.err.println("Name or E-mail not recognized, process terminated.");
+                        }
+                        else if (confirmPass != password) System.err.println("Password incorrect, process terminated.");
+
+                        else {
+                            System.out.println("Please, select the credential you would like to change.");
+                            System.out.println("Name - E-mail - Password - All");
+                            String change = scan.nextLine();
+                            if (change.equals("Name")) {
+                                System.out.printf("Type your new name: ");
+                                String newName = scan.nextLine();
+                                System.out.printf("Your new name is: %s", newName);
+                            }
+                            else if (change.equals("E-mail")) {
+                                System.out.printf("Type your new E-mail: ");
+                                String newEmail = scan.nextLine();
+                                System.out.printf("Your new E-mail is: %s", newEmail);
+                            }
+                            else if (change.equals("Password")) {
+                                System.out.printf("Type your new password: ");
+                                String newPass = scan.nextLine();
+                                System.out.printf("Your new password is: %s", newPass);
+                            }
+                            else if (change.equals("All")) {
+                                System.out.printf("Type your new name: ");
+                                String newName = scan.nextLine();
+
+                                System.out.printf("Type your new E-mail: ");
+                                String newEmail = scan.nextLine();
+
+                                System.out.printf("Type your new password: ");
+                                String newPass = scan.nextLine();
+
+                                System.out.println("Your new credentials are:");
+                                System.out.printf("\nName: %s", newName);
+                                System.out.printf("\nE-mail: %s", newEmail);
+                                System.out.printf("\nPassword: %s", newPass);
+                                
+                            }
+                            else System.err.println("Credential non-existent.");
+                        }
                     break;
             
                 default:
