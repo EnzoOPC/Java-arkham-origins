@@ -23,27 +23,35 @@ public class App {
 
             System.out.println("Thanks for creating a account!");
 
-            double money = 0;
+            double money = 1000;
 
             System.out.println("Possible actions:");
             System.out.println("Deposit - Withdraw - Delete account - Change account information");
 
             String action = scan.nextLine();
 
+            // I wnated to make all this funcitions, but I haven't learned that yet
+            // So switch case it is
+
             switch (action) {
                 case "Deposit":
-                        System.out.println("You selected Deposit");
+                        System.out.println("You selected Deposit, please input the amount you would like to deposit.");
+                        money += scan.nextDouble();
+                        System.out.printf("Deposit completed. You curently have U$ %.2f in your account.", money);
                     break;
 
                 case "Withdraw":
-                        System.out.println("You selected Withdraw, please input the amount you want to witdraw from your account");
+                        System.out.println("You selected Withdraw, please input the amount you would like to witdraw from your account");
                         double Withdraw = scan.nextDouble();
                         if (Withdraw > money) {
-                            System.err.println("You curently don't have enough deposited to withdraw tha ammount.");
-                            System.err.printf("\nYou curently have %.2f in your account.", money);
+                            System.err.println("You curently don't have enough deposited to withdraw this ammount.");
+                            System.err.printf("\nYou curently have U$ %.2f in your account.", money);
                         } else if (Withdraw <= money) {
-                            System.out.printf("\nYou withdrew %.2f from your accont and curently has %.2f in your account", Withdraw, money);
+                            money -= Withdraw;
+                            System.out.printf("\nYou withdrew U$ %.2f from your accont and curently has U$%.2f in your account", Withdraw, money);
                         }
+
+                        // Because the whole switch case thing i need to manualy set the money variable before running the program :(
 
                     break;
 
